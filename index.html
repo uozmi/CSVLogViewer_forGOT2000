@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; worker-src blob:; object-src 'none'; base-uri 'none'; form-action 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robust Range Slider Viewer</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="status"></div>
+
+    <div id="appGrid" class="is-empty">
+        <div id="controls">
+            <span id="cursorToggleLabel">カーソル表示</span>
+            <label id="mainCursorToggleWrapper"><span class="cursor-legend-marker cursor-legend-marker-main"></span></label>
+            <label id="subCursorToggleWrapper"><span class="cursor-legend-marker cursor-legend-marker-sub"></span></label>
+            <input type="file" id="fileInput" accept=".csv">
+        </div>
+
+        <div id="mainContainer">
+            <div class="chart-panel">
+                <div class="chart-header"><select id="sel1"></select><span class="chart-info chart-info-main" id="info1Main"></span><span class="chart-info chart-info-sub" id="info1Sub"></span></div>
+                <div class="chart-body"><canvas id="canvas1"></canvas></div>
+            </div>
+            <div class="chart-panel">
+                <div class="chart-header"><select id="sel2"></select><span class="chart-info chart-info-main" id="info2Main"></span><span class="chart-info chart-info-sub" id="info2Sub"></span></div>
+                <div class="chart-body"><canvas id="canvas2"></canvas></div>
+            </div>
+            <div class="chart-panel">
+                <div class="chart-header"><select id="sel3"></select><span class="chart-info chart-info-main" id="info3Main"></span><span class="chart-info chart-info-sub" id="info3Sub"></span></div>
+                <div class="chart-body"><canvas id="canvas3"></canvas></div>
+            </div>
+            <div id="chartSpacer" aria-hidden="true"></div>
+            <div id="uploadCta" aria-hidden="true">
+                <div id="uploadDropZone">
+                    <button id="uploadCtaButton" type="button">ファイルを選択</button>
+                    <div class="upload-help">またはファイルをドラッグ＆ドロップ</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sliderContainer">
+            <canvas id="sliderCanvas"></canvas>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
